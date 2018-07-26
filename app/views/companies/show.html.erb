@@ -1,0 +1,15 @@
+<h1>Show Page</h1>
+<%= @company.name %><br>
+
+<h3>Offices:</h3>
+<% @company.offices.each do |office| %>
+<%=office.building.name %> Floor: <%= office.floor%> Rent: <%= office.building.rent_per_floor %><br>
+<% end %><br>
+Total Rent: <%= @company.total_rent %> p/m
+
+<h3>Employees:</h3>
+<% @company.employees.each do |employee| %>
+  <%= employee.name %>: <%= employee.title %><br>
+<% end %>
+<%= link_to "All Companies", companies_path %><br>
+<%= link_to "Edit this company", edit_company_path(@company) %>

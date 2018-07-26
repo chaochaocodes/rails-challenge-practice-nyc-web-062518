@@ -1,0 +1,14 @@
+<h1>Create a new company</h1>
+<%= form_for @company do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.fields_for :office do |office| %>
+    <% Building.all.each do |building|%>
+      <p><%= building.name %></p>
+      <% building.available_floors.each do |floor| %>
+        <%= floor %><%= office.check_box :floor %>
+      <% end %>
+    <% end%>
+  <% end %><br>
+  <%= f.submit %>
+<% end %>

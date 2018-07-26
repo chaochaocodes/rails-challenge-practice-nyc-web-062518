@@ -1,0 +1,21 @@
+<h1>Company Edit Page</h1>
+
+<h3><%= @company.name %></h3>
+
+
+<% @company.employees.each do |employee|%>
+  <%= employee.name %>
+  <%= employee.title %>
+  <%= link_to "Delete", employee, method: :delete, data: {confirm: "Are you sure?"}%><br>
+<% end  %>
+
+<%= form_for @company do |f| %>
+  <%= f.fields_for @employee do |e| %>
+  <%= e.text_field :name %>
+  <%= e.text_field :title %>
+  <% end %>
+<%= f.submit %>
+<% end %>
+
+
+<!-- <%= render partial: "employee_form" %> -->

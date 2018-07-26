@@ -1,0 +1,8 @@
+<h1>Buildings Index</h1>
+<% @buildings.each do |building|%>
+  <%= link_to building.name, building %>
+  <% building.available_floors.each do |floor| %>
+    <%= floor %>
+  <% end %>
+  <br>
+<% end %>

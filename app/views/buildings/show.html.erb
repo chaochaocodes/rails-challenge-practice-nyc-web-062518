@@ -1,0 +1,9 @@
+<h1>Show page</h1>
+<p>Name: <%= @building.name %></p>
+<p>Country: <%= @building.country %></p>
+<p>Address: <%= @building.address %></p>
+<p>Rent:<%= @building.rent_per_floor %></p>
+<p>Number of Floors:<%= @building.number_of_floors %></p>
+<p>Available Floors:<%= @building.available_floors %></p>
+<p>Office Floors<%= @building.office_floors %></p>
+<p><%= link_to "edit", edit_building_path(@building)%></p>
